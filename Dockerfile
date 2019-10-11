@@ -3,6 +3,7 @@ FROM hexeo/arduino-builder
 COPY entrypoint.sh /entrypoint.sh
 
 RUN apk --no-cache add python3 && \
+ln -s /usr/bin/python3 /usr/bin/python && \
 wget -q -O download1.tmp https://github.com/esp8266/Arduino/releases/download/2.5.2/esp8266-2.5.2.zip && \
 unzip download1.tmp > /dev/null && \
 rm download1.tmp && \
