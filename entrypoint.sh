@@ -20,7 +20,7 @@ getLibraryOptions() {
     done
 }
 
-BUILDER_OPTIONS="-compile -warnings=all -hardware $BUILDER_PATH/packages -hardware $BUILDER_PATH/hardware -tools $BUILDER_PATH/hardware/tools/avr -tools $BUILDER_PATH/tools-builder `getLibraryOptions $LIBRARIES_PATH` -fqbn $BOARD_NAME -prefs=runtime.tools.xtensa-lx106-elf-gcc.path=$BUILDER_PATH/packages/esp8266/tools/xtensa-lx106-elf-gcc/2.5.0-3-20ed2b9 -prefs=runtime.tools.python.path=/usr/bin/"
+BUILDER_OPTIONS="-compile -warnings=all -build-path $INPUT_BUILD -hardware $BUILDER_PATH/packages -hardware $BUILDER_PATH/hardware -tools $BUILDER_PATH/hardware/tools/avr -tools $BUILDER_PATH/tools-builder `getLibraryOptions $LIBRARIES_PATH` -fqbn $BOARD_NAME -prefs=runtime.tools.xtensa-lx106-elf-gcc.path=$BUILDER_PATH/packages/esp8266/tools/xtensa-lx106-elf-gcc/2.5.0-3-20ed2b9 -prefs=runtime.tools.python.path=/usr/bin/"
 
 if [ -d "$INPUT_HARDWARE" ]; then
     BUILDER_OPTIONS="$BUILDER_OPTIONS -hardware $INPUT_HARDWARE"
