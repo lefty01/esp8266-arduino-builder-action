@@ -1,5 +1,5 @@
 # Run arduino-builder
-Github Action to run arduino-builder for sketches and see if they compile.
+Github Action to run arduino-builder for sketches.
 Used Arduino IDE version is `1.8.3`.
 
 ## Usage
@@ -15,9 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build all example sketches
-      uses: Legion2/arduino-builder-action@v2.0.0
-      with:
-        board: "arduino:avr:leonardo"
+      uses: antimatter15/esp8266-arduino-builder-action@v4.0.0
 ```
 
 ### Arguments
