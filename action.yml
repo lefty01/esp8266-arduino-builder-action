@@ -1,19 +1,20 @@
 name: 'Run esp8266 arduino-builder'
 description: 'Run esp8266 arduino-builder'
-author: 'Kevin Kwok'
+author: 'Andreas Loeffler'
 inputs: 
   sketch:
     description: 'Path to a single sketch'
     required: false
   sketchDirectory:
     description: 'Directory in which to search for sketches'
-    default: 'examples'
+    default: './'
   build:
     description: 'Build directory'
     default: 'build'
   board:
     description: 'Fully Qualified Board Name'
-    default: 'esp8266:esp8266:nodemcuv2:xtal=80,vt=flash,exception=disabled,eesz=4M2M,ip=lm2f,dbg=Disabled,lvl=None____,wipe=none,baud=230400'
+    default: 'esp8266:esp8266:d1_mini_pro:xtal=80,vt=flash,exception=disabled,eesz=4M2M,ip=lm2f,dbg=Disabled,lvl=None____,wipe=none,baud=921600'
+
   libraries:
     description: |
       Directory containing Arduino libraries.
@@ -26,5 +27,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
 branding:
-  icon: 'server'  
-  color: 'blue'
+  icon: 'watch'
+  color: 'green'
